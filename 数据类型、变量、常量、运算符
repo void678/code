@@ -1,1 +1,5 @@
+1.intVal := 1 相等于：
+  var intVal int 
+  intVal =1 
 
+2.f := "Runoob" // var f string = "Runoob"
