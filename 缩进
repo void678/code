@@ -1,0 +1,13 @@
+1.正确的缩进和格式化
+    PS C:\Gocode\src\Text> gofmt Text.go
+    package main
+    
+    import "fmt"
+    
+    func main() {
+            fmt.Println("hello world")
+            fmt.Println("dshh\tjjasjh")
+            fmt.Println("dsjk\ndujuh")
+    }
+    PS C:\Gocode\src\Text> gofmt -w Text.go       
+    PS C:\Gocode\src\Text>
