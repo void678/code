@@ -1,0 +1,147 @@
+1.shift + alt + 向下箭头   复制粘贴上一行
+
+2.在程序中查看某个变量的占用的字节大小和数据类型
+   fmt.Printf("n的类型是 5.%T n占用的字节数是 %d", n1 ,unsafe.Sizeof(n))
+   unsafe.Sizeof()是unsafe包中的一个函数，可以返回变量占用的字节数
+   需要引入unsafe包 import "unsafe"
+
+3.引多个包
+  import(
+      "fmt"
+      "unsafe"
+  )
+
+4.bit：计算机中的最小存储单位
+  bite：计算机中基本存储单元
+  1byte = 8 bit
+
+5.golang中字符类型使用
+
+      func main() {
+      	var c1 byte ='a';
+      	var c2 byte ='0';
+        //当我们直接输出byte值，就是输出了对应字符的ASCII码值
+      	fmt.Println("c1=", c1)
+      	fmt.Println("c2=", c2)
+        //输出对应字符，需要使用格式化输出
+      	fmt.Printf("c1=%c c2=%c", c1, c2)
+      	
+      }
+
+6.字符常量是用单引号''括起来的单个字符
+
+7.go语言的字符使用UTF-8编码
+
+8.import "strconv"
+
+9.演示golang中指针的使用
+      package main
+      
+      import "fmt"
+      
+      func main() {
+      	var i int  = 10
+      	fmt.Println("i的地址是", &i)
+      
+      	//下面的 var ptr *int = &i
+      	//1.ptr是一个指针变量
+      	//2.ptr的类型 *int
+      	//3.ptr本身的值 &i
+      
+      	var ptr *int = &i
+      	fmt.Printf("ptr = %v\n", ptr)
+         fmt.Println("ptr的地址是%v\n", &ptr)
+         fmt.Printf("ptr指向的值是%v\n", *ptr)
+
+      }
+
+         输出：i的地址是 0xc00000a0b8
+         ptr = 0xc00000a0b8
+         ptr的地址是 0xc00005a028
+         ptr指向的值是10
+         （i的值是10 ptr的值是0xc00000a0b8）
+
+         获取指针类型所指向的值使用*, 比如 var ptr *int,使用*ptr获取ptr指向的值
+         指针变量是接受地址的
+
+10.字符串遍历方式
+      1)
+      var str string = "hello, world"
+         for i:= 0; i<len(str); i++ {
+             fmt.Printf("%c\n", str[i])
+         } 
+
+      2)按照字符方式遍历
+      var str string ="hello, world"
+      	for index, val := range str{
+      		fmt.Printf("index=%d, val=%c\n", index, val)
+      	}
+
+11.str2 := []rune(str)  切片
+
+12.经典空心金字塔
+
+
+         package main
+         
+         import "fmt"
+         
+         func main(){
+            var n int
+            fmt.Println("请输入金字塔层数")
+            fmt.Scanln(&n)
+            for i:=1;i<=n;i++{
+               for j:=1;j<=n-i;j++{
+                  fmt.Print(" ")
+               }
+               for j:=1;j<=2*n-1;j++{
+                  if(j==1||j==2*n-1||i==n){
+                     fmt.Print("*")
+                  } else{
+                     fmt.Print(" ")
+                  }
+               }
+               fmt.Printf("\n")
+            }
+         }
+               
+13.九乘九乘法表
+      package main
+      
+      import "fmt"
+      
+      func main(){
+      	for i:=1;i<=9;i++{
+      		for j := 1;j<=i;j++{
+      			fmt.Printf("%d * %d = %d\t",j,i,j*i)
+      		}
+      		fmt.Printf("\n")
+      	}
+      }
+
+               
+               
+               
+               
+               
+               
+               
+               
+                     
+               
+               
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
